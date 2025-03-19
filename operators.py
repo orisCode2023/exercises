@@ -75,7 +75,7 @@ def swap(a, b, c):
     print(a, b, c)
 
 
-#swap(10, 17, 3)
+# swap(10, 17, 3)
 
 
 def swap_without_temp(a, b, c):
@@ -101,9 +101,26 @@ def swap_python(a, b, c):
     print(f"after swap {c}")
 
 
-#swap_python(1, 2, 3)
+# swap_python(1, 2, 3)
 
-def mix_str(chain , num):
+def mix_str(chain, num):
     print(int(chain) + num)
-mix_str("3" , 3)
 
+
+# mix_str("3" , 3)
+
+def casting():
+    print(bool(False))
+
+
+# casting()
+
+def input_from_user():
+    num1 = input("Enter float number1")
+    num2 = input("Enter float number3")
+    num3 = input("Enter float number2")
+    print(f"{num1 + num2}")
+    print(num1 + num3)
+    print(num2 + num3)
+
+input_from_user()
