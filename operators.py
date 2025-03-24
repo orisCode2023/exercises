@@ -259,4 +259,19 @@ def sum_num(num):
     print(sum1)
 
 
-sum_num(3504)
+#sum_num(3504)
+
+def hint():
+    a: int = 5
+    a = 'avi'
+    print(a)
+
+#hint()
+
+
+def title():
+    avi = 0
+    print("avi".title())
+    print(avi.title())
+
+#title()
