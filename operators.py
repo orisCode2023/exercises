@@ -1,3 +1,4 @@
+from operator import truediv
 from os import chown
 
 
@@ -123,4 +124,139 @@ def input_from_user():
     print(num1 + num3)
     print(num2 + num3)
 
-input_from_user()
+
+def boolean():
+    num = int(input("Enter one number"))
+    if num <= 10 and num <= 20:
+        return False
+    return True
+
+
+def paper():
+    x = 5
+    flag = True
+    return (x > 0 and x < 10) or not flag
+
+
+def paper2():
+    y = 3.14
+    z = 8
+    return y > 3.0 and (z >= 8 or z < 0)
+
+
+#print(paper2())
+
+def comparing_int():
+    num1 = int(input("Enter one number"))
+    num2 = int(input("Enter one number"))
+    num3 = int(input("Enter one number"))
+    if 15 < num1 < 150 and 15 < num2 < 150 and 15 < num3 < 150:
+        print("The numbers are in rage")
+
+    if num2 != num1 and num3 != num1:
+        print("The numbers are not equal")
+
+    if num1 == num2 or num1 == num3:
+        print("The first number is equal")
+
+    if num1 == num2 or num2 != num3:
+        print("the second number is ")
+
+
+#comparing_int()
+
+def comparing_strings1():
+    sum1 = sum2 = sum3 = 0
+    str1 = input("Enter one string")
+    str2 = input("Enter one string")
+    str3 = input("Enter one string")
+
+    ascii_value_str1 = [ord(char1) for char1 in str1]
+    ascii_value_str2 = [ord(char2) for char2 in str2]
+    ascii_value_str3 = [ord(char3) for char3 in str3]
+
+    sum1 = sum(ascii_value_str1)
+    sum2 = sum(ascii_value_str2)
+    sum3 = sum(ascii_value_str3)
+
+    if 15 < sum1 < 150 and 15 < sum2 < 150 and 15 < sum3 < 150:
+        print("The strings are in rage")
+    else:
+        print("One or more strings are out of range")
+
+
+#comparing_strings1()
+
+def comparing_strings2():
+
+    str1 = input("Enter one string")
+    str2 = input("Enter one string")
+    str3 = input("Enter one string")
+
+    if str1 != str3 and str1 != str2:
+        print("The strings are not equals")
+
+    if str1 == str2 or str1 == str3:
+        print("one or more strings are equals")
+
+    if str2 == str1 or str2 != str3:
+        print("the first equals and third not")
+
+#comparing_strings2()
+
+def is_divide(num):
+    temp = num
+    divider = num % 10
+    num //= 10
+    new_num = divider + num
+    if temp % new_num != 0:
+        return False
+    return True
+
+#print(is_divide(17))
+
+def from_user():
+    num = int(input("Enter number with 7 digits"))
+    last = num % 10
+    first = num // 1000000
+    sixth = (num // last) % 10
+    second = (num // 100000) % 10
+    fifth = (num // 100) % 10
+    forth = (num // 1000) % 10
+    third =(num // 10000) % 10
+
+
+
+    if last == first:
+      print("the first and last equals")
+    else:
+        print("the first and last are not equals")
+
+    if sixth != second:
+        print("the second and the sixth are not equals")
+    else:
+        print("the second and the sixth are equals")
+
+    if third == forth and third != fifth:
+        print("the numbers in the middle are not equals")
+
+#print(from_user())
+
+def bigger_then_middle():
+    num1 = int(input("Enter one number"))
+    num2 = int(input("Enter one number"))
+    num3 = int(input("Enter one number"))
+
+    return (num1 + num3) > num2
+
+#print(bigger_then_middle())
+
+def sum_num(num):
+    sum1 = 0
+    while(num > 0):
+        sum1 += (num % 10)
+        num //= 10
+    print(sum1)
+
+
+sum_num(3504)
