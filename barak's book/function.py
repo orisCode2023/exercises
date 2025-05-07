@@ -4,12 +4,26 @@ def speak():
 
 name = "boy"
 #speak()
-def check(num1):
+def check():
     if True:
         print("OK")
-    else:
-        bla(blabla)
-#check(1)
 
-a = 24
-print(id(a))
+#check()
+
+def in_loop():
+    my_list = ["dani" , "dan" , "eli"]
+    if input() in my_list:
+        print("is exist")
+        return True
+    else:
+        return False
+#in_loop()
+
+def find_clean_code_problem():
+    x = [1, 2, 3]
+    if x[0] == 1:
+        print('Yes')
+    if x[1] == 2:
+        print('Yes')
+
+
