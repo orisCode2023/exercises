@@ -153,6 +153,7 @@ def rotate_matrix():
             if i == 0:
                 matrix[i][j], matrix[col][rows] = matrix[col][rows], matrix[i][j]
                 col -= 1
+                rows -=1
                 if j == len(matrix) - 2:
                     break
 
@@ -212,7 +213,117 @@ def is_palindrome():
 
     return True
 
-print(is_palindrome())
+# print(is_palindrome())
+def rotate_all_mat():
+    matrix = [[1, 1, 1, 1, 1],
+              [2, 2, 2, 2, 2],
+              [3, 3, 3, 3, 3],
+              [4, 4, 4, 4, 4],
+              [5, 5, 5, 5, 5]]
+    rows = col = len(matrix)
+    for i in range(len(matrix)):
+        col -= 1
+        for j in range(len(matrix)):
+            rows -= 1
+            matrix[i][j], matrix[col][rows] = matrix[col][rows], matrix[i][j]
+            if j == col:
+                break
+    pprint(matrix)
+
+# rotate_all_mat()
+from pprint import pprint
+
+
+def rotate_matrix_90_clockwise():
+    matrix = [[1, 1, 1, 1, 1],
+              [2, 2, 2, 2, 2],
+              [3, 3, 3, 3, 3],
+              [4, 4, 4, 4, 4],
+              [5, 5, 5, 5, 5]]
+
+    n = len(matrix)
+
+    # Rotate layer by layer from outside to inside
+    for layer in range(n // 2):
+        first = layer
+        last = n - 1 - layer
+
+        for i in range(first, last):
+            offset = i - first
+
+            # Save top element
+            top = matrix[first][i]
+
+            # Top = Left
+            matrix[first][i] = matrix[last - offset][first]
+
+            # Left = Bottom
+            matrix[last - offset][first] = matrix[last][last - offset]
+
+            # Bottom = Right
+            matrix[last][last - offset] = matrix[i][last]
+
+            # Right = Top
+            matrix[i][last] = top
+
+    pprint(matrix)
+
+
+#rotate_matrix_90_clockwise()
+
+def merge():
+    arr = []
+    nums1 = [1, 2, 3]
+    nums2 = [2, 5, 6]
+    idx1 = idx2 = 0
+    n = len(nums2)
+    m = len(nums1) + n
+
+    for _ in range(m):
+
+        if idx1 < len(nums1) and nums1[idx1] < nums2[idx2]:
+            arr.append(nums1[idx1])
+            idx1 += 1
+        elif idx2 < len(nums2):
+            arr.append(nums2[idx2])
+            idx2 += 1
+
+    nums1 = arr
+
+    return nums1
+
+# print(merge())
+
+def print_10_on_10():
+    matrix = []
+    for i in range (10):
+        matrix.append([])
+        for j in range(10):
+            matrix[i].append((i + 1) * (j + 1))
+
+    pprint(matrix)
+
+# print_10_on_10()
+def test():
+    nums = [2,2,1,1,1,2,2]
+    dic = {}
+    temp = 0
+    for num in nums:
+        if num in dic:
+            dic[num] += 1
+        else:
+            dic.update({num: 1})
+    for key, value in dic.items():
+        if value > len(nums) / 2:
+            temp = key
+    return temp
+
+print(test())
+
+
+
+
+
 
 
 
